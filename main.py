@@ -1,34 +1,34 @@
 import portfolio
 
 portfolio_list=[]
-
-print('''
-====================================
-RiskLab - Banking Risk Analyzer
-Version 1.0
-====================================
-''')
-
-print('''1. Add instrument
-2. View Portfolio
-3. Search Instrument
-4. Delete Instrument
-5. Exit
-''')
 choice = 1
 try:
     while (choice != 5):
+        print('''
+        ====================================
+        RiskLab - Banking Risk Analyzer
+        Version 1.0
+        ====================================
+        ''')
+
+        print('''
+        1. Add instrument
+        2. View Portfolio
+        3. Search Instrument
+        4. Delete Instrument
+        5. Exit
+        ''')
+
         choice = int(input("enter choice:"))
         if (choice == 1):
             portfolio.instrument_add(portfolio_list)
             print("Instrument added")
         elif (choice == 2):
-            print("portfolio viewed")
             portfolio.portfolio_view(portfolio_list)
         elif (choice == 3):
-            print (" instrument searched")
+            portfolio.portfolio_search(portfolio_list)
         elif(choice == 4):
-            print ("instrument deleted")
+            portfolio.instrument_delete(portfolio_list)
         elif(choice == 5):
             exit()
         else:
