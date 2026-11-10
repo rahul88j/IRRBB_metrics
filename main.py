@@ -1,3 +1,7 @@
+import portfolio
+
+portfolio_list=[]
+
 print('''
 ====================================
 RiskLab - Banking Risk Analyzer
@@ -16,9 +20,11 @@ try:
     while (choice != 5):
         choice = int(input("enter choice:"))
         if (choice == 1):
+            portfolio.instrument_add(portfolio_list)
             print("Instrument added")
         elif (choice == 2):
             print("portfolio viewed")
+            portfolio.portfolio_view(portfolio_list)
         elif (choice == 3):
             print (" instrument searched")
         elif(choice == 4):
@@ -32,7 +38,5 @@ except ValueError:
 
 except Exception as e:
     print("\n An unexpected error occured")
+    print(f"Error: {e}")
 
-
-
-# choice = input(int())
